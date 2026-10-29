@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareerConnect | Student Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">C</span> CareerConnect</a>
+    <span class="top-note">Student & Career Profile</span>
+  </header>
+
+  <main class="page">
+    <section class="intro">
+      <div class="eyebrow"><span class="eyebrow-dot"></span> CAREER PROFILE REGISTRATION</div>
+      <h1>Build your <span>professional profile.</span></h1>
+      <p>Share your education, skills, and experience in one place. Fields marked <b>*</b> are required.</p>
+      <div class="progress-wrap">
+        <div class="progress-label"><span>Profile completion</span><strong id="progressText">0%</strong></div>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+    </section>
+
+    <form id="registrationForm" novalidate>
+      <section class="form-card">
+        <div class="section-heading">
+          <div class="section-icon">01</div>
+          <div><h2>Personal information</h2><p>How can recruiters contact you?</p></div>
+        </div>
+        <div class="grid two">
+          <div class="field"><label for="fullName">Full name <b>*</b></label><input id="fullName" name="fullName" type="text" placeholder="e.g. Lakshmi Patil" required minlength="2"><small class="error"></small></div>
+          <div class="field"><label for="email">Email address <b>*</b></label><input id="email" name="email" type="email" placeholder="you@example.com" required><small class="error"></small></div>
+          <div class="field"><label for="phone">Phone number <b>*</b></label><input id="phone" name="phone" type="tel" placeholder="10-digit mobile number" inputmode="numeric" maxlength="10" required><small class="error"></small></div>
+          <div class="field"><label for="dob">Date of birth</label><input id="dob" name="dob" type="date"><small class="error"></small></div>
+          <div class="field"><label for="gender">Gender</label><select id="gender" name="gender"><option value="">Select an option</option><option>Female</option><option>Male</option><option>Non-binary</option><option>Prefer not to say</option></select></div>
+          <div class="field"><label for="city">City</label><input id="city" name="city" type="text" placeholder="e.g. Bengaluru"></div>
+          <div class="field full"><label for="address">Address</label><textarea id="address" name="address" rows="2" placeholder="Your current address"></textarea></div>
+        </div>
+      </section>
+
+      <section class="form-card">
+        <div class="section-heading">
+          <div class="section-icon">02</div>
+          <div><h2>Education details</h2><p>Add your academic qualifications.</p></div>
+        </div>
+        <h3 class="subheading">10th / SSLC</h3>
+        <div class="grid three">
+          <div class="field"><label for="school10">School name</label><input id="school10" name="school10" type="text" placeholder="School name"></div>
+          <div class="field"><label for="board10">Board</label><select id="board10" name="board10"><option value="">Select board</option><option>State Board</option><option>CBSE</option><option>ICSE</option><option>Other</option></select></div>
+          <div class="field"><label for="marks10">Percentage / CGPA</label><input id="marks10" name="marks10" type="number" min="0" max="100" step="0.01" placeholder="e.g. 89.5"></div>
+        </div>
+        <div class="separator"></div>
+        <h3 class="subheading">12th / PUC / Diploma</h3>
+        <div class="grid three">
+          <div class="field"><label for="school12">College name</label><input id="school12" name="school12" type="text" placeholder="PU college / diploma college"></div>
+          <div class="field"><label for="stream12">Stream</label><select id="stream12" name="stream12"><option value="">Select stream</option><option>Science (PCMB)</option><option>Science (PCMC)</option><option>Commerce</option><option>Arts</option><option>Diploma</option><option>Other</option></select></div>
+          <div class="field"><label for="marks12">Percentage / CGPA</label><input id="marks12" name="marks12" type="number" min="0" max="100" step="0.01" placeholder="e.g. 85"></div>
+        </div>
+        <div class="separator"></div>
+        <h3 class="subheading">Degree / Current education</h3>
+        <div class="grid three">
+          <div class="field"><label for="degree">Degree</label><select id="degree" name="degree"><option value="">Select degree</option><option>B.E.</option><option>B.Tech</option><option>B.Sc.</option><option>BCA</option><option>MCA</option><option>M.Tech</option><option>Other</option></select></div>
+          <div class="field"><label for="branch">Branch / Specialization</label><input id="branch" name="branch" type="text" placeholder="e.g. AI & ML"></div>
+          <div class="field"><label for="college">College / University</label><input id="college" name="college" type="text" placeholder="College name"></div>
+          <div class="field"><label for="gradYear">Expected graduation year</label><select id="gradYear" name="gradYear"><option value="">Select year</option></select></div>
+          <div class="field"><label for="cgpa">Current CGPA / Percentage</label><input id="cgpa" name="cgpa" type="number" min="0" max="100" step="0.01" placeholder="e.g. 8.5 or 85"></div>
+          <div class="field"><label for="backlogs">Active backlogs</label><select id="backlogs" name="backlogs"><option value="">Select</option><option>0</option><option>1</option><option>2</option><option>3+</option></select></div>
+        </div>
+      </section>
+
+      <section class="form-card">
+        <div class="section-heading">
+          <div class="section-icon">03</div>
+          <div><h2>Skills & languages</h2><p>Select skills you know and languages you can communicate in.</p></div>
+        </div>
+        <div class="field">
+          <label>Technical skills <b>*</b></label>
+          <div class="choice-grid" id="skillsGroup">
+            <label class="choice"><input type="checkbox" name="skills" value="HTML"><span>HTML</span></label>
+            <label class="choice"><input type="checkbox" name="skills" value="CSS"><span>CSS</span></label>
+            <label class="choice"><input type="checkbox" name="skills" value="JavaScript"><span>JavaScript</span></label>
+            <label class="choice"><input type="checkbox" name="skills" value="Java"><span>Java</span></label>
+            <label class="choice"><input type="checkbox" name="skills" value="Python"><span>Python</span></label>
+            <label class="choice"><input type="checkbox" name="skills" value="C"><span>C</span></label>
+            <label class="choice"><input type="checkbox" name="skills" value="C++"><span>C++</span></label>
+            <label class="choice"><input type="checkbox" name="skills" value="SQL / MySQL"><span>SQL / MySQL</span></label>
+            <label class="choice"><input type="checkbox" name="skills" value="React"><span>React</span></label>
+            <label class="choice"><input type="checkbox" name="skills" value="Spring Boot"><span>Spring Boot</span></label>
+            <label class="choice"><input type="checkbox" name="skills" value="Machine Learning"><span>Machine Learning</span></label>
+            <label class="choice"><input type="checkbox" name="skills" value="Data Structures & Algorithms"><span>DSA</span></label>
+          </div>
+          <small class="error" id="skillsError"></small>
+        </div>
+        <div class="field gap-top">
+          <label>Languages known</label>
+          <div class="choice-grid">
+            <label class="choice"><input type="checkbox" name="languages" value="English"><span>English</span></label>
+            <label class="choice"><input type="checkbox" name="languages" value="Kannada"><span>Kannada</span></label>
+            <label class="choice"><input type="checkbox" name="languages" value="Hindi"><span>Hindi</span></label>
+            <label class="choice"><input type="checkbox" name="languages" value="Telugu"><span>Telugu</span></label>
+            <label class="choice"><input type="checkbox" name="languages" value="Tamil"><span>Tamil</span></label>
+            <label class="choice"><input type="checkbox" name="languages" value="Other"><span>Other</span></label>
+          </div>
+        </div>
+        <div class="grid two gap-top">
+          <div class="field"><label for="skillLevel">Overall skill level</label><select id="skillLevel" name="skillLevel"><option value="">Select level</option><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></div>
+          <div class="field"><label for="role">Preferred job role</label><input id="role" name="role" type="text" placeholder="e.g. Java Developer"></div>
+        </div>
+      </section>
+
+      <section class="form-card">
+        <div class="section-heading">
+          <div class="section-icon">04</div>
+          <div><h2>Projects & experience</h2><p>Highlight work that demonstrates your abilities.</p></div>
+        </div>
+        <div class="grid two">
+          <div class="field"><label for="projectTitle">Project title</label><input id="projectTitle" name="projectTitle" type="text" placeholder="e.g. Water Quality Prediction"></div>
+          <div class="field"><label for="experience">Experience</label><select id="experience" name="experience"><option value="">Select experience</option><option>Fresher</option><option>Internship</option><option>Less than 1 year</option><option>1–2 years</option><option>2+ years</option></select></div>
+          <div class="field full"><label for="projectDescription">Project / internship description</label><textarea id="projectDescription" name="projectDescription" rows="3" placeholder="Briefly describe your contribution, tools, and outcome"></textarea></div>
+          <div class="field full"><label for="objective">Career objective</label><textarea id="objective" name="objective" rows="3" maxlength="500" placeholder="Write a short professional summary (maximum 500 characters)"></textarea><small class="hint"><span id="objectiveCount">0</span>/500 characters</small></div>
+        </div>
+      </section>
+
+      <section class="form-card">
+        <div class="section-heading">
+          <div class="section-icon">05</div>
+          <div><h2>Online profiles & resume</h2><p>Help recruiters explore your work.</p></div>
+        </div>
+        <div class="grid two">
+          <div class="field"><label for="linkedin">LinkedIn profile</label><input id="linkedin" name="linkedin" type="url" placeholder="https://www.linkedin.com/in/your-profile"><small class="error"></small></div>
+          <div class="field"><label for="github">GitHub profile</label><input id="github" name="github" type="url" placeholder="https://github.com/username"><small class="error"></small></div>
+          <div class="field full"><label for="portfolio">Portfolio / personal website</label><input id="portfolio" name="portfolio" type="url" placeholder="https://yourportfolio.com"><small class="error"></small></div>
+          <div class="field full">
+            <label for="resume">Upload resume <b>*</b></label>
+            <label class="upload-box" for="resume">
+              <span class="upload-icon">↑</span><span><strong>Choose your resume</strong><small>PDF or DOC/DOCX · Maximum 5 MB</small></span>
+              <span class="upload-action">Browse files</span>
+            </label>
+            <input class="file-input" id="resume" name="resume" type="file" accept=".pdf,.doc,.docx" required>
+            <div class="file-name" id="fileName">No file selected</div><small class="error" id="resumeError"></small>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-card consent-card">
+        <label class="consent"><input type="checkbox" id="consent" required><span>I confirm that the information provided is accurate and agree to its use for registration and career-related communication. <b>*</b></span></label>
+        <small class="error" id="consentError"></small>
+      </section>
+
+      <div class="form-actions">
+        <button class="btn btn-secondary" type="reset">Clear form</button>
+        <button class="btn btn-primary" type="submit">Submit registration <span>→</span></button>
+      </div>
+      <p class="privacy-note">Your information stays in this browser demo. This frontend does not send or save data to a server.</p>
+    </form>
+    <footer>© 2026 CareerConnect · Student Registration Demo</footer>
+  </main>
+
+  <div class="modal-backdrop" id="successModal" role="dialog" aria-modal="true" aria-labelledby="successTitle" hidden>
+    <div class="success-modal">
+      <div class="success-check">✓</div>
+      <h2 id="successTitle">Profile validated!</h2>
+      <p>Your form passed the demo validation. No information has been sent to a server.</p>
+      <div class="summary-box" id="summaryBox"></div>
+      <button class="btn btn-primary full-button" id="closeModal" type="button">Back to form</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
